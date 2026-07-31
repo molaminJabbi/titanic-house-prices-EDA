@@ -33,7 +33,7 @@ The goal of this project is to understand which factors influenced passenger sur
 ## Visual Summary
 The charts below make the main findings easier to understand at a glance.
 
-![Overall Survival](week1_2/Assets/images/survival_rate.png)
+![Overall Survival]([week1_2/Assets/images/survival_](https://github.com/molaminJabbi/titanic-house-prices-EDA/blob/main/Assets/images/Survival_rate_by_Pclass.png)rate.png)
 
 ![Survival by Gender](week1_2/Assets/images/titanic_survival_by_gender.png)
 
