@@ -64,3 +64,15 @@ The charts below make the main findings easier to understand at a glance.
 
 ## License
 This project is intended for educational and portfolio purposes.
+
+
+# DATA CLEANING & EXPLORATORY DATA ANALYSIS
+# TITANIC - EDA
+## Problem Statement
+In the 90s, the titanic sank after colliding with an iceberg, resulting in the deaths of over 1,500 of the approximately 2,224 passengers and crew aboard. Survival was not random — evacuation protocol, ticket class, and passenger demographics all played a role in who made it off the ship alive.
+
+**This analysis investigates:** which passenger characteristics were most associated with survival, and what does that reveal about how the evacuation actually played out? Understanding this is a template for a broader class of problems — identifying which factors predict an outcome in an imbalanced, real-world dataset — before any predictive model is built.
+
+## Dataset:
+[Original titanic dataset](https://www.kaggle.com/datasets/yasserh/titanic-dataset)
+[Cleaned titanic dataset]()
