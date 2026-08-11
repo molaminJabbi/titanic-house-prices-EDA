@@ -75,4 +75,8 @@ In the 90s, the titanic sank after colliding with an iceberg, resulting in the d
 
 ## Dataset:
 [Original titanic dataset](https://www.kaggle.com/datasets/yasserh/titanic-dataset)
-[Cleaned titanic dataset]()
+[Cleaned titanic dataset](data/titanic_cleaned.csv) 
+Size: 891 records, 12 columns
+
+## Methodology
+
