@@ -99,8 +99,20 @@ Univariate analysis of survival rate, port of embarkation, age, and fare distrib
 Bivariate analysis of survival against gender, passenger class, and age group.
 Correlation analysis across all numeric features against the survival outcome.
 
+### Visual Summary
+[Survival rate](Assets/images/survival_rate.png)\
+[Survival by passenger class](Assets/images/Survival_rate_by_Pclass.png)\
+[Survival by Gender](Assets/images/titanic_survival_by_gender.png)
 Limitations
 Median imputation for Age creates an artificial spike at the median value (visible in the age distribution), which slightly understates the true variance in passenger age.
 Cabin was dropped rather than used to derive deck-level features (e.g., proximity to lifeboats), which could have added predictive signal at the cost of working with a sparse column.
 This is a well-known, heavily studied dataset — many of the patterns found here (class and gender effects) are consistent with historical accounts of the evacuation, which increases confidence in the analysis but also means the findings are more confirmatory than novel.
+
+What's Next
+Full findings are documented in insight_summary.md.
+Week 3: statistical hypothesis testing on the relationships identified here (e.g., is the survival gap between classes statistically significant?).
+Week 4: build a Logistic Regression model to predict survival, evaluated with Accuracy.
+
+Tech Stack
+Python · Pandas · NumPy · Matplotlib · Seaborn · Jupyter Notebook
 
