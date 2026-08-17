@@ -77,6 +77,30 @@ In the 90s, the titanic sank after colliding with an iceberg, resulting in the d
 [Original titanic dataset](https://www.kaggle.com/datasets/yasserh/titanic-dataset)
 [Cleaned titanic dataset](data/titanic_cleaned.csv) 
 Size: 891 records, 12 columns
+Target Variable: Survived (0= not survived, 1= Survived)
 
 ## Methodology
+1. Data Cleaning
+Checked for missing values and duplicates. Found no duplicate rows.
+Missing values identified: Age (177 of 891 records, ~20%), Cabin (687 of 891, ~77%), Embarked (2 of 891).
+Dropped Cabin — too sparse (77% missing) to reliably impute or use.
+Imputed missing Age values with the column median.
+Imputed the 2 missing Embarked values with 'S' (Southampton), based on the fact that Southampton was overwhelmingly the most common port of embarkation for 1st-class passengers (the class both missing records belonged to).
+
+3. Handling Data Irregularities
+Found 15 records with a Fare of 0, which is not realistic for a paying passenger.
+Corrected these by replacing 0 with the median fare for that passenger's Pclass, rather than a single global median — since fare is strongly tied to class.
+
+3. Feature Engineering
+Created an AgeGroup categorical feature (Child, Teenager, Young Adult, Middle-aged, Senior) by binning Age, to support more interpretable group-level comparisons than raw age values.
+
+4. Exploratory Analysis
+Univariate analysis of survival rate, port of embarkation, age, and fare distributions.
+Bivariate analysis of survival against gender, passenger class, and age group.
+Correlation analysis across all numeric features against the survival outcome.
+
+Limitations
+Median imputation for Age creates an artificial spike at the median value (visible in the age distribution), which slightly understates the true variance in passenger age.
+Cabin was dropped rather than used to derive deck-level features (e.g., proximity to lifeboats), which could have added predictive signal at the cost of working with a sparse column.
+This is a well-known, heavily studied dataset — many of the patterns found here (class and gender effects) are consistent with historical accounts of the evacuation, which increases confidence in the analysis but also means the findings are more confirmatory than novel.
 
