@@ -103,6 +103,7 @@ Correlation analysis across all numeric features against the survival outcome.
 [Survival rate](Assets/images/survival_rate.png)\
 [Survival by passenger class](Assets/images/Survival_rate_by_Pclass.png)\
 [Survival by Gender](Assets/images/titanic_survival_by_gender.png)
+
 Limitations
 Median imputation for Age creates an artificial spike at the median value (visible in the age distribution), which slightly understates the true variance in passenger age.
 Cabin was dropped rather than used to derive deck-level features (e.g., proximity to lifeboats), which could have added predictive signal at the cost of working with a sparse column.
