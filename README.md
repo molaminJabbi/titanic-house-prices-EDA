@@ -74,9 +74,9 @@ In the 90s, the titanic sank after colliding with an iceberg, resulting in the d
 **This analysis investigates:** which passenger characteristics were most associated with survival, and what does that reveal about how the evacuation actually played out? Understanding this is a template for a broader class of problems — identifying which factors predict an outcome in an imbalanced, real-world dataset — before any predictive model is built.
 
 ## Dataset:
-[Original titanic dataset](https://www.kaggle.com/datasets/yasserh/titanic-dataset)  
-[Cleaned titanic dataset](data/titanic_cleaned.csv)  
-Size: 891 records, 12 columns  
+[Original titanic dataset](https://www.kaggle.com/datasets/yasserh/titanic-dataset)\
+[Cleaned titanic dataset](data/titanic_cleaned.csv)\
+Size: 891 records, 12 columns\
 Target Variable: Survived (0= not survived, 1= Survived)
 
 ## Methodology
