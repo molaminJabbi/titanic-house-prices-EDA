@@ -51,7 +51,7 @@ The goal of this project is to understand which factors influenced passenger sur
 
 - **Handling Missing Values:**
   - **Cabin (dropped):** Too sparse (77% missing) to reliably impute or derive meaningful features. Dropping was more prudent than attempting deck-level feature engineering.
-  - **Age (imputed with median):** Filled with 29.7 (column median). Median chosen to minimize bias from age distribution skewness.
+  - **Age (imputed with median):** Filled with 28.0 (column median). Median chosen to minimize bias from age distribution skewness.
   - **Embarked (imputed with 'S'):** Both missing values occurred in 1st-class passengers. Southampton ('S') was the most common port for 1st-class embarkation (72.4% of 1st-class passengers), making it the most statistically justified imputation.
 
 ### 2. Handling Data Irregularities
@@ -80,62 +80,84 @@ The goal of this project is to understand which factors influenced passenger sur
 ## Key Findings
 
 ### Survival Overview
-- **Overall Survival Rate:** 38.4% (342 of 891 passengers survived)
+
+**Overall Survival Rate:** 38.4% (342 of 891 passengers survived)
+
+![Survival Rate Distribution](Assets/images/survival_rate.png)
+
+---
 
 ### By Passenger Class
+
+**Key Insight:** 1st-class passengers were **2.6× more likely** to survive than 3rd-class passengers, reflecting priorities in evacuation procedures and lifeboat access.
+
 | Class | Survival Rate | Count |
 |-------|---------------|-------|
 | 1st Class | 62.9% | 136/217 |
 | 2nd Class | 47.3% | 87/184 |
 | 3rd Class | 24.2% | 119/490 |
 
-**Insight:** 1st-class passengers were 2.6× more likely to survive than 3rd-class passengers, reflecting priorities in evacuation procedures and lifeboat access.
+![Survival by Passenger Class](Assets/images/Survival_rate_by_Pclass.png)
+
+---
 
 ### By Gender
+
+**Key Insight:** The **"women and children first" protocol** was clearly enforced; females were **3.9× more likely** to survive than males.
+
 | Gender | Survival Rate | Count |
 |--------|---------------|-------|
 | Female | 74.2% | 233/314 |
 | Male | 18.9% | 109/577 |
 
-**Insight:** The "women and children first" protocol was clearly enforced; females were 3.9× more likely to survive than males.
+![Survival by Gender](Assets/images/titanic_survival_by_gender.png)
+
+---
 
 ### By Age Group
+
+**Key Insight:** Age mattered significantly, with children prioritized and elderly passengers less likely to survive.
+
 - **Children (0-12):** ~67% survival rate
 - **Teenagers (13-19):** ~45% survival rate
 - **Young Adults (20-35):** ~36% survival rate
 - **Middle-aged (36-60):** ~40% survival rate
 - **Seniors (61+):** ~27% survival rate
 
-**Insight:** Age mattered significantly, with children prioritized and elderly passengers less likely to survive.
-
-### Top Correlations with Survival
-| Feature | Correlation |
-|---------|-------------|
-| Pclass | -0.55 |
-| Sex (encoded) | +0.54 |
-| Age | -0.08 |
-| Fare | +0.26 |
+![Survival by Age Group](Assets/images/AgeGroup_survival_rate.png)
 
 ---
 
-## Visual Summary
+### Port of Embarkation
 
-- [Survival Rate Distribution](Assets/images/survival_rate.png)
-- [Survival by Passenger Class](Assets/images/Survival_rate_by_Pclass.png)
-- [Survival by Gender](Assets/images/titanic_survival_by_gender.png)
-- [Embarkation Port Distribution](Assets/images/Embarked.png)
-- [Feature Correlation Matrix](Assets/images/corrlation_matrix.png)
-- [Survival by Age Group](Assets/images/AgeGroup_survival_rate.png)
+![Embarkation Port Distribution](Assets/images/Embarked.png)
+
+---
+
+### Top Correlations with Survival
+
+| Feature | Correlation | Interpretation |
+|---------|-------------|-----------------|
+| Pclass | -0.34 | Higher class (lower number) → higher survival |
+| Sex (encoded: male=0, female=1) | +0.54 | Being female strongly increases survival odds |
+| Fare | +0.25 | Higher fare → better survival chances |
+| Age | -0.06 | Weak negative correlation; younger slightly favored |
+| SibSp | -0.04 | Weak negative; family relations slightly decrease odds |
+| Parch | +0.08 | Weak positive; having parents/children slightly increases odds |
+
+![Feature Correlation Matrix](Assets/images/corrlation_matrix.png)
+
+**Key Finding:** Class and gender were the strongest predictors of survival, followed by fare (which correlates with class). Family size and age had minimal impact on survival odds.
 
 ---
 
 ## Limitations
 
-1. **Median Imputation Artifacts:** Imputing Age with the median (29.7 years) creates an artificial spike in the age distribution, slightly understating true age variance. This could bias downstream models; alternative methods (KNN, MICE) could be explored.
+1. **Median Imputation Artifacts:** Imputing Age with the median (28.0 years) creates an artificial spike in the age distribution, slightly understating true age variance. This could bias downstream models; alternative methods (KNN, MICE) could be explored.
 
 2. **Cabin Data Loss:** Cabin was dropped entirely rather than used to derive deck-level features (e.g., proximity to lifeboats), which could have added predictive signal. The 77% sparsity made this trade-off necessary.
 
-3. **Small Sample for Embarked:** Only 2 records had missing embarkation; while the imputation is justified, the sample size is too small to validate.
+3. **Small Sample for Embarked:** Only 2 records had missing embarkation; while the imputation is justified, the sample size is too small to validate statistically.
 
 4. **Dataset Limitations:** This is a well-known, heavily studied dataset. Many patterns found here (class and gender effects) are consistent with historical accounts, increasing confidence in results but reducing novelty. Future work should focus on predictive modeling rather than descriptive analysis.
 
@@ -173,7 +195,7 @@ The goal of this project is to understand which factors influenced passenger sur
 
 3. Open the notebook:
    ```bash
-   jupyter notebook
+   jupyter notebook titanic.ipynb
    ```
 
 4. Run the analysis cells in sequence.
