@@ -17,7 +17,7 @@ The goal of this project is to understand which factors influenced passenger sur
 | Item | Details |
 |------|---------|
 | **Original Dataset** | [Titanic Dataset on Kaggle](https://www.kaggle.com/datasets/yasserh/titanic-dataset) |
-| **Cleaned Dataset** | [Cleaned titanic Data](data/cleaned_titanic.csv) |
+| **Cleaned Dataset** | [Cleaned titanic Data](data/titanic_cleaned.csv) |
 | **Size** | 891 records, 12 features |
 | **Target Variable** | `Survived` (0 = did not survive, 1 = survived) |
 
