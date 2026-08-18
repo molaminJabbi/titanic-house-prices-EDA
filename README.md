@@ -21,24 +21,6 @@ The goal of this project is to understand which factors influenced passenger sur
 | **Size** | 891 records, 12 features |
 | **Target Variable** | `Survived` (0 = did not survive, 1 = survived) |
 
-### Features
-
-| Feature | Type | Description |
-|---------|------|-------------|
-| `PassengerId` | int | Unique passenger identifier |
-| `Pclass` | int | Ticket class (1 = First, 2 = Second, 3 = Third) |
-| `Name` | str | Passenger name |
-| `Sex` | str | Gender (male/female) |
-| `Age` | float | Age in years |
-| `SibSp` | int | Number of siblings/spouses aboard |
-| `Parch` | int | Number of parents/children aboard |
-| `Ticket` | str | Ticket number |
-| `Fare` | float | Ticket fare paid (in £) |
-| `Cabin` | str | Cabin number |
-| `Embarked` | str | Port of embarkation (C = Cherbourg, Q = Queenstown, S = Southampton) |
-
----
-
 ## Methodology
 
 ### 1. Data Cleaning
@@ -145,7 +127,7 @@ The goal of this project is to understand which factors influenced passenger sur
 | SibSp | -0.04 | Weak negative; family relations slightly decrease odds |
 | Parch | +0.08 | Weak positive; having parents/children slightly increases odds |
 
-![Feature Correlation Matrix](Assets/images/corrlation_matrix.png)
+![Feature Correlation Matrix](Assets/images/correlation_matrix.png)
 
 **Key Finding:** Class and gender were the strongest predictors of survival, followed by fare (which correlates with class). Family size and age had minimal impact on survival odds.
 
@@ -173,42 +155,6 @@ The goal of this project is to understand which factors influenced passenger sur
 
 ## Tech Stack
 
-- **Language:** Python 3.x
-- **Data Processing:** Pandas, NumPy
-- **Visualization:** Matplotlib, Seaborn
-- **Environment:** Jupyter Notebook
+|Python| |Pandas| |NumPy| |Matplotlib| |Seaborn| |Jupyter Notebook|
 
 ---
-
-## How to Use
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/molaminJabbi/titanic-house-prices-EDA.git
-   cd titanic-house-prices-EDA
-   ```
-
-2. Install dependencies:
-   ```bash
-   pip install pandas numpy matplotlib seaborn jupyter
-   ```
-
-3. Open the notebook:
-   ```bash
-   jupyter notebook titanic.ipynb
-   ```
-
-4. Run the analysis cells in sequence.
-
----
-
-## Author
-
-**molaminJabbi**  
-*Data Scientist*
-
----
-
-## License
-
-This project is open source and available under the MIT License.
