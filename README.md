@@ -17,7 +17,7 @@ The goal of this project is to understand which factors influenced passenger sur
 | Item | Details |
 |------|---------|
 | **Original Dataset** | [Titanic Dataset on Kaggle](https://www.kaggle.com/datasets/yasserh/titanic-dataset) |
-| **Cleaned Dataset** | `data/titanic_cleaned.csv` |
+| **Cleaned Dataset** | [Cleaned titanic Data](data/cleaned_titanic.csv) |
 | **Size** | 891 records, 12 features |
 | **Target Variable** | `Survived` (0 = did not survive, 1 = survived) |
 
@@ -155,6 +155,6 @@ The goal of this project is to understand which factors influenced passenger sur
 
 ## Tech Stack
 
-|Python| |Pandas| |NumPy| |Matplotlib| |Seaborn| |Jupyter Notebook|
+|Python|   |Pandas|   |NumPy|   |Matplotlib|   |Seaborn|   |Jupyter Notebook|
 
 ---
